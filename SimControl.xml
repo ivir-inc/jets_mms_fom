@@ -3,10 +3,10 @@
     <modelIdentification>
         <name>SimulationControl</name>
         <type>FOM</type>
-        <version>3a</version>
-        <modificationDate>2020-03-13</modificationDate>
+        <version>4</version>
+        <modificationDate>2026-08-18</modificationDate>
         <securityClassification>unclassified</securityClassification>
-        <releaseRestriction>TBD by US Government (expected to be "Unlimited Release")</releaseRestriction>
+        <releaseRestriction>None</releaseRestriction>
         <purpose>All monitoring and exercise control</purpose>
         <applicationDomain>Training</applicationDomain>
         <description>The SimControl module will include data and commands monitoring the realtime status of a simulation (training exercise) and controlling that simulation.  These functions are often referred to as the "white cell" component of a simulation system.
@@ -28,10 +28,10 @@
             <objectClass>
                 <name>DateTime</name>
                 <sharing>PublishSubscribe</sharing>
-                <semantics>The controller federate is responsible for maintaining/updating three perspectives on time:  the simulationElapsedTime, the simulatedDateTime (when the federation is simulating), and currentDateTime (the current time from the system clock).  The simulatedDateTime may not matter for some training events and is optional. 
- 
-The controller federate is responsible for SimulationControl interactions to start/stop, save/restore and pause/resume. 
- 
+                <semantics>The controller federate is responsible for maintaining/updating three perspectives on time:  the simulationElapsedTime, the simulatedDateTime (when the federation is simulating), and currentDateTime (the current time from the system clock).  The simulatedDateTime may not matter for some training events and is optional.
+
+The controller federate is responsible for SimulationControl interactions to start/stop, save/restore and pause/resume.
+
 Saves will be preceded with a pause so that simulations can save their state without executing.</semantics>
                 <attribute>
                     <name>simulationElapsedTime</name>
@@ -119,13 +119,13 @@ Saves will be preceded with a pause so that simulations can save their state wit
             <objectClass>
                 <name>FederationState</name>
                 <sharing>PublishSubscribe</sharing>
-                <semantics>Federates will subscribe to this class to determine the current state of the federation.  Allows late joiners to discover the current state: 
- 
-0 - pendingStart; federation is initializing 
-1 - running; federation is executing 
-2 - stopped; federation is stopped.  Execution has ended and will not resume 
-3 - paused; federation is paused.  Wait for running state to begin execution 
-4 - saving; federation is in a saving state.  Wait for running state to begin execution. 
+                <semantics>Federates will subscribe to this class to determine the current state of the federation.  Allows late joiners to discover the current state:
+
+0 - pendingStart; federation is initializing
+1 - running; federation is executing
+2 - stopped; federation is stopped.  Execution has ended and will not resume
+3 - paused; federation is paused.  Wait for running state to begin execution
+4 - saving; federation is in a saving state.  Wait for running state to begin execution.
 5 - resuming; federation is in a resuming state.  Wait for running state to begin execution.</semantics>
                 <attribute>
                     <name>state</name>
@@ -212,7 +212,7 @@ Saves will be preceded with a pause so that simulations can save their state wit
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>0 = not visible, 1 = visible. 
+                    <semantics>0 = not visible, 1 = visible.
 Controls both systolic and diastolic visibility.</semantics>
                 </attribute>
                 <attribute>

@@ -3,18 +3,16 @@
     <modelIdentification>
         <name>Facility</name>
         <type>FOM</type>
-        <version>0.2</version>
-        <modificationDate>2019-07-22</modificationDate>
+        <version>4</version>
+        <modificationDate>2026-08-18</modificationDate>
         <securityClassification>unclassified</securityClassification>
-        <releaseRestriction>TBD by US Government (expected to be "Unlimited Release")</releaseRestriction>
+        <releaseRestriction>None</releaseRestriction>
         <purpose>To model facilities providing evacuation and enroute medical care</purpose>
         <applicationDomain>Training</applicationDomain>
         <description>Used to describe the various facilities offering evacuation and enroute treatment to an injured patient.  
 
-Reference Medical Operations Handbook which describes facility characteristics
 
-Also 
-Army Techniques Publication No. 4-25.13 - Casualty Evacuation</description>
+</description>
         <useLimitation>The Medical Modeling and Simulation Federation Object Model by Information Visualization and Innovative Research, Inc. is licensed under CC BY-ND 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/4.0/</useLimitation>
         <poc>
             <pocType>Technical POC</pocType>
@@ -22,10 +20,6 @@ Army Techniques Publication No. 4-25.13 - Casualty Evacuation</description>
             <pocOrg>Information Visualization and Innovative Research Inc.</pocOrg>
             <pocEmail>jets@ivirinc.com</pocEmail>
         </poc>
-        <reference>
-            <type>Army Techniques Publication No. 4-25.13 - Casualty Evacuation</type>
-            <identification></identification>
-        </reference>
         <other></other>
     </modelIdentification>
     <objects>

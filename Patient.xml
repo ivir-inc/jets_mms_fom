@@ -3,10 +3,10 @@
     <modelIdentification>
         <name>Patient</name>
         <type>FOM</type>
-        <version>3a</version>
-        <modificationDate>2020-03-13</modificationDate>
+        <version>4</version>
+        <modificationDate>2026-08-18</modificationDate>
         <securityClassification>Unclassified</securityClassification>
-        <releaseRestriction>TBD by US Government (expected to be "Unlimited Release")</releaseRestriction>
+        <releaseRestriction>None</releaseRestriction>
         <purpose>The Patient Module will be used to model patients, their injuries and the treatments administered to them.</purpose>
         <applicationDomain>Training</applicationDomain>
         <description>Patient module: all ground truth data related to the patient. Any data in this module will represent the true patient. Data can be from a physiology engine or instructor input.
@@ -23,7 +23,7 @@ Multiple Patient instances may be created.  Each Patient instance may have zero 
             <pocOrg>Information Visualization and Innovative Research Inc.</pocOrg>
             <pocEmail>jets@ivirinc.com</pocEmail>
         </poc>
-        <other>Resources:  MedBiquitous; Medical Device Innovation Consortium (MDIC) ; SNOMED; Biogears; HUMMOD</other>
+        <other></other>
     </modelIdentification>
     <objects>
         <objectClass>
@@ -41,8 +41,8 @@ Multiple Patient instances may be created.  Each Patient instance may have zero 
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>patientId associates a particular patient to a particular injuryId. 
- 
+                    <semantics>patientId associates a particular patient to a particular injuryId.
+
 Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.</semantics>
                 </attribute>
                 <attribute>
@@ -87,7 +87,7 @@ Once a Patient object is created, the ID is static and cannot be changed or reus
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>SPO2 
+                    <semantics>SPO2
 Blood Oxygen Level expressed as real value .80 = 80%</semantics>
                 </attribute>
                 <attribute>
@@ -137,8 +137,8 @@ Blood Oxygen Level expressed as real value .80 = 80%</semantics>
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>patientId associates a particular patient to a particular injuryId. 
- 
+                    <semantics>patientId associates a particular patient to a particular injuryId.
+
 Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.</semantics>
                 </attribute>
                 <attribute>
@@ -211,8 +211,8 @@ Once a Patient object is created, the ID is static and cannot be changed or reus
             <objectClass>
                 <name>Signs</name>
                 <sharing>PublishSubscribe</sharing>
-                <semantics>A sign is a physical response to an injury or condition. Signs can be noticed externally and can be observed or measured by a provider. 
- 
+                <semantics>A sign is a physical response to an injury or condition. Signs can be noticed externally and can be observed or measured by a provider.
+
 Note that some measurable signs are modeled in the Physiology class.  A "Signs" monitor simulation would need to subscribe to both the Physiology and Signs classes</semantics>
                 <attribute>
                     <name>patientId</name>
@@ -223,8 +223,8 @@ Note that some measurable signs are modeled in the Physiology class.  A "Signs" 
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>patientId uniquely identifies a patient. 
- 
+                    <semantics>patientId uniquely identifies a patient.
+
 Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.</semantics>
                 </attribute>
                 <attribute>
@@ -363,7 +363,7 @@ Once a Patient object is created, the ID is static and cannot be changed or reus
             <objectClass>
                 <name>Symptoms</name>
                 <sharing>PublishSubscribe</sharing>
-                <semantics>Symptoms object: Perceived truth about breaks in the normal condition of the body. It is something a patient feels and reports to the provider. The symptom can be measured by a value as rated by the patient. “Worst stomach ache I have ever experienced.” “Pain is a 7 on a scale of 1-10.” For the patient module, these are created by the scenario, instructor, or physiology engine. 
+                <semantics>Symptoms object: Perceived truth about breaks in the normal condition of the body. It is something a patient feels and reports to the provider. The symptom can be measured by a value as rated by the patient. “Worst stomach ache I have ever experienced.” “Pain is a 7 on a scale of 1-10.” For the patient module, these are created by the scenario, instructor, or physiology engine.
 See Signs class for additional information</semantics>
                 <attribute>
                     <name>patientId</name>
@@ -374,8 +374,8 @@ See Signs class for additional information</semantics>
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>patientId uniquely identifies a patient. 
- 
+                    <semantics>patientId uniquely identifies a patient.
+
 Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.</semantics>
                 </attribute>
                 <attribute>
@@ -459,8 +459,8 @@ Once a Patient object is created, the ID is static and cannot be changed or reus
             <objectClass>
                 <name>Injury</name>
                 <sharing>PublishSubscribe</sharing>
-                <semantics>The operational name of the patient’s injury, along with information describing the severity and effect of the injury on the patient. The effect can be used to adjust the physiology engine model of the patient. 
- 
+                <semantics>The operational name of the patient’s injury, along with information describing the severity and effect of the injury on the patient. The effect can be used to adjust the physiology engine model of the patient.
+
 The injurySeverity scale will be translated by the physiology engine into its own variables. Some injuries will require more than a simple severity scale, and those effects are captured in subclasses.</semantics>
                 <attribute>
                     <name>patientId</name>
@@ -587,10 +587,10 @@ The injurySeverity scale will be translated by the physiology engine into its ow
             <objectClass>
                 <name>Treatment</name>
                 <sharing>Neither</sharing>
-                <semantics>This class is not meant to be published or subscribed.  Rather use the subclasses of MedicationTreatmentl and PhysicalTreatment. 
- 
-The procedure performed by the medical provider that impacts the patient's physiology. 
- 
+                <semantics>This class is not meant to be published or subscribed.  Rather use the subclasses of MedicationTreatmentl and PhysicalTreatment.
+
+The procedure performed by the medical provider that impacts the patient's physiology.
+
 Each Treatment Instance will have a unique treatmentId.  Once a treatmentId is used, it cannot be reused during an execution.</semantics>
                 <attribute>
                     <name>patientId</name>
@@ -601,8 +601,8 @@ Each Treatment Instance will have a unique treatmentId.  Once a treatmentId is u
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>patientId associates a particular patient to a particular injuryId. 
- 
+                    <semantics>patientId associates a particular patient to a particular injuryId.
+
 Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.</semantics>
                 </attribute>
                 <attribute>
@@ -625,8 +625,8 @@ Once a Patient object is created, the ID is static and cannot be changed or reus
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>The treatmentId is a unique value which associates a treatment to an injury and a patient.  Once a treatmentId is created, it cannot be reused during an execution. 
- 
+                    <semantics>The treatmentId is a unique value which associates a treatment to an injury and a patient.  Once a treatmentId is created, it cannot be reused during an execution.
+
 Naming Convention: Treatment_uniquevalue</semantics>
                 </attribute>
                 <attribute>
@@ -753,8 +753,8 @@ Naming Convention: Treatment_uniquevalue</semantics>
             <objectClass>
                 <name>Pathology</name>
                 <sharing>PublishSubscribe</sharing>
-                <semantics>Pathology object: Chronic conditions that are affecting the patient. Examples 
-•	Diabetes type 1 and 2 
+                <semantics>Pathology object: Chronic conditions that are affecting the patient. Examples
+•	Diabetes type 1 and 2
 •	Hypertension (chronic)</semantics>
                 <attribute>
                     <name>patientId</name>
@@ -765,17 +765,17 @@ Naming Convention: Treatment_uniquevalue</semantics>
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>patientId associates a particular patient to a particular pathology. 
- 
+                    <semantics>patientId associates a particular patient to a particular pathology.
+
 Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.</semantics>
                 </attribute>
             </objectClass>
             <objectClass>
                 <name>PersonalData</name>
                 <sharing>PublishSubscribe</sharing>
-                <semantics>Personal data object: Base characteristics/demographics of the patient. Examples 
-•	age 
-•	weight 
+                <semantics>Personal data object: Base characteristics/demographics of the patient. Examples
+•	age
+•	weight
 •	height</semantics>
                 <attribute>
                     <name>patientId</name>
@@ -786,8 +786,8 @@ Once a Patient object is created, the ID is static and cannot be changed or reus
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>patientId associates a particular patient to a particular injuryId. 
- 
+                    <semantics>patientId associates a particular patient to a particular injuryId.
+
 Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.</semantics>
                 </attribute>
                 <attribute>
@@ -908,8 +908,8 @@ Once a Patient object is created, the ID is static and cannot be changed or reus
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>patientId uniquely identifies a patient. 
- 
+                    <semantics>patientId uniquely identifies a patient.
+
 Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.</semantics>
                 </attribute>
                 <attribute>
@@ -959,8 +959,8 @@ Once a Patient object is created, the ID is static and cannot be changed or reus
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>patientId uniquely identifies a patient. 
- 
+                    <semantics>patientId uniquely identifies a patient.
+
 Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.</semantics>
                 </attribute>
                 <attribute>
@@ -1169,8 +1169,8 @@ Once a Patient object is created, the ID is static and cannot be changed or reus
                 <objectClass>
                     <name>UrineLab</name>
                     <sharing>PublishSubscribe</sharing>
-                    <semantics>Attributes and measured values measured by a urine test. Attributes may be null depending on the particular tests administered. 
- 
+                    <semantics>Attributes and measured values measured by a urine test. Attributes may be null depending on the particular tests administered.
+
 The datatypes and values associated with each attribute are what would be determined if a full urine lab test was performed.  For simulators using any type of strip, a mapping would need to be performed from what the lab values are, to the values the strip would return.</semantics>
                     <attribute>
                         <name>urobilinogen</name>
@@ -1247,8 +1247,8 @@ The datatypes and values associated with each attribute are what would be determ
                         <sharing>PublishSubscribe</sharing>
                         <transportation>HLAreliable</transportation>
                         <order>Receive</order>
-                        <semantics>Related to reading bloodInUrine; 
-True - blood cells are hemolyzed (damaged); 
+                        <semantics>Related to reading bloodInUrine;
+True - blood cells are hemolyzed (damaged);
 False - blood cells are whole (undamaged)</semantics>
                     </attribute>
                     <attribute>
@@ -1501,8 +1501,8 @@ False - blood cells are whole (undamaged)</semantics>
                     <sharing>Neither</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>patientId associates a particular patient to a particular injuryId. 
- 
+                    <semantics>patientId associates a particular patient to a particular injuryId.
+
 Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.</semantics>
                 </attribute>
                 <attribute>
@@ -1530,8 +1530,8 @@ Once a Patient object is created, the ID is static and cannot be changed or reus
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>patientId uniquely identifies a patient. 
- 
+                    <semantics>patientId uniquely identifies a patient.
+
 Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.</semantics>
                 </attribute>
                 <attribute>
@@ -1642,10 +1642,10 @@ Once a Patient object is created, the ID is static and cannot be changed or reus
                 <parameter>
                     <name>patientId</name>
                     <dataType>HLAASCIIstring</dataType>
-                    <semantics>patientId associates a particular patient to a particular injuryId. 
- 
-Once a Patient object is created, the ID is static and cannot be changed or reused during an execution. 
- 
+                    <semantics>patientId associates a particular patient to a particular injuryId.
+
+Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.
+
 Unique string ID representing the patient.  Links patient with injury, treatment, transportation</semantics>
                 </parameter>
             </interactionClass>
@@ -1658,10 +1658,10 @@ Unique string ID representing the patient.  Links patient with injury, treatment
                 <parameter>
                     <name>patientId</name>
                     <dataType>HLAASCIIstring</dataType>
-                    <semantics>patientId associates a particular patient to a particular injuryId. 
- 
-Once a Patient object is created, the ID is static and cannot be changed or reused during an execution. 
- 
+                    <semantics>patientId associates a particular patient to a particular injuryId.
+
+Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.
+
 Unique string ID representing the patient.  Links patient with injury, treatment, transportation</semantics>
                 </parameter>
             </interactionClass>
@@ -1670,14 +1670,14 @@ Unique string ID representing the patient.  Links patient with injury, treatment
                 <sharing>PublishSubscribe</sharing>
                 <transportation>HLAreliable</transportation>
                 <order>Receive</order>
-                <semantics>Interaction to tell the PatientSimulator to create a Symptoms object.  These parameters represent the initial conditions of the patient that are outwardly visible or measurable by the trainee. 
- 
+                <semantics>Interaction to tell the PatientSimulator to create a Symptoms object.  These parameters represent the initial conditions of the patient that are outwardly visible or measurable by the trainee.
+
 The PatientSimulator needs to create the Symptoms object in order to update it.</semantics>
                 <parameter>
                     <name>patientId</name>
                     <dataType>HLAASCIIstring</dataType>
-                    <semantics>patientId uniquely identifies a patient. 
- 
+                    <semantics>patientId uniquely identifies a patient.
+
 Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.</semantics>
                 </parameter>
                 <parameter>
@@ -1730,9 +1730,9 @@ Once a Patient object is created, the ID is static and cannot be changed or reus
                 <parameter>
                     <name>patientId</name>
                     <dataType>HLAASCIIstring</dataType>
-                    <semantics>patientId identifies a particular patient. 
-patientId must be unique within an execution. 
- 
+                    <semantics>patientId identifies a particular patient.
+patientId must be unique within an execution.
+
 Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.</semantics>
                 </parameter>
                 <parameter>
@@ -1750,10 +1750,10 @@ Once a Patient object is created, the ID is static and cannot be changed or reus
                 <parameter>
                     <name>patientId</name>
                     <dataType>HLAASCIIstring</dataType>
-                    <semantics>patientId associates a particular patient to a particular injuryId. 
- 
-Once a Patient object is created, the ID is static and cannot be changed or reused during an execution. 
- 
+                    <semantics>patientId associates a particular patient to a particular injuryId.
+
+Once a Patient object is created, the ID is static and cannot be changed or reused during an execution.
+
 Unique string ID representing the patient.  Links patient with injury, treatment, transportation</semantics>
                 </parameter>
             </interactionClass>
@@ -1830,8 +1830,7 @@ Unique string ID representing the patient.  Links patient with injury, treatment
                 <sharing>PublishSubscribe</sharing>
                 <transportation>HLAreliable</transportation>
                 <order>Receive</order>
-                <semantics>Allow a non-owning federate to "request" a change to vitals to the owning federate.  The owner may acknowledge or ignore the request. 
-</semantics>
+                <semantics>Allow a non-owning federate to "request" a change to vitals to the owning federate.  The owner may acknowledge or ignore the request.</semantics>
                 <parameter>
                     <name>patientId</name>
                     <dataType>HLAASCIIstring</dataType>
@@ -2208,14 +2207,14 @@ Unique string ID representing the patient.  Links patient with injury, treatment
             <enumeratedData>
                 <name>LevelOfResponseEnum</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>AVPU is a scale used to quickly identify the responsiveness of a patient to various stimuli. 
- 
-Alert: The patient is fully awake (although not necessarily oriented). This patient will have spontaneously open eyes, will respond to voice (although may be confused) and will have bodily motor function. 
- 
-Verbal: The patient makes some kind of response when you talk to them, which could be in any of the three component measures of eyes, voice or motor - e.g. patient's eyes open on being asked "Are you OK?". The response could be as little as a grunt, moan, or slight move of a limb when prompted by the voice of the rescuer. 
- 
-Pain: The patient makes a response on any of the three component measures on the application of pain stimulus, such as a central pain stimulus like a sternal rub or a peripheral stimulus such as squeezing the fingers. A patient with some level of consciousness (a fully conscious patient would not require a pain stimulus) may respond by using their voice, moving their eyes, or moving part of their body (including abnormal posturing). 
- 
+                <semantics>AVPU is a scale used to quickly identify the responsiveness of a patient to various stimuli.
+
+Alert: The patient is fully awake (although not necessarily oriented). This patient will have spontaneously open eyes, will respond to voice (although may be confused) and will have bodily motor function.
+
+Verbal: The patient makes some kind of response when you talk to them, which could be in any of the three component measures of eyes, voice or motor - e.g. patient's eyes open on being asked "Are you OK?". The response could be as little as a grunt, moan, or slight move of a limb when prompted by the voice of the rescuer.
+
+Pain: The patient makes a response on any of the three component measures on the application of pain stimulus, such as a central pain stimulus like a sternal rub or a peripheral stimulus such as squeezing the fingers. A patient with some level of consciousness (a fully conscious patient would not require a pain stimulus) may respond by using their voice, moving their eyes, or moving part of their body (including abnormal posturing).
+
 Unresponsive: Sometimes noted as 'Unconscious'.</semantics>
                 <enumerator>
                     <name>alert</name>
@@ -2534,8 +2533,8 @@ Unresponsive: Sometimes noted as 'Unconscious'.</semantics>
             <enumeratedData>
                 <name>EcgRhythmEnum</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>Identifies the ECG rhythm of the patient (does not draw the waveform). 
- 
+                <semantics>Identifies the ECG rhythm of the patient (does not draw the waveform).
+
 Source: https://www.aclsmedicaltraining.com/rhythm-recognition/</semantics>
                 <enumerator>
                     <name>notApplicable</name>
@@ -2597,8 +2596,8 @@ Source: https://www.aclsmedicaltraining.com/rhythm-recognition/</semantics>
             <enumeratedData>
                 <name>HeartSoundEnum</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>notApplicable is to indicate not applicable, while null is specifically for an absence of sounds to indicate a critical diagnostic criteria. 
- 
+                <semantics>notApplicable is to indicate not applicable, while null is specifically for an absence of sounds to indicate a critical diagnostic criteria.
+
 Heart sound source: TruMonitor and https://depts.washington.edu/physdx/heart/demo.html</semantics>
                 <enumerator>
                     <name>notApplicable</name>
@@ -2676,8 +2675,8 @@ Heart sound source: TruMonitor and https://depts.washington.edu/physdx/heart/dem
             <enumeratedData>
                 <name>LungSoundEnum</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>notApplicable is to indicate not applicable, while null is specifically for an absence of sounds to indicate a critical diagnostic criteria. 
- 
+                <semantics>notApplicable is to indicate not applicable, while null is specifically for an absence of sounds to indicate a critical diagnostic criteria.
+
 Lung sound source: TruMonitor and https://www.mountsinai.org/health-library/symptoms/breath-sounds</semantics>
                 <enumerator>
                     <name>notApplicable</name>
@@ -2719,8 +2718,8 @@ Lung sound source: TruMonitor and https://www.mountsinai.org/health-library/symp
             <enumeratedData>
                 <name>BowelSoundEnum</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>notApplicable is to indicate not applicable, while null is specifically for an absence of sounds to indicate a critical diagnostic criteria. 
- 
+                <semantics>notApplicable is to indicate not applicable, while null is specifically for an absence of sounds to indicate a critical diagnostic criteria.
+
 Bowel sound source: TruMonitor and https://centreforgastrointestinalhealth.com.au/resources/stomach-making-noises/</semantics>
                 <enumerator>
                     <name>notApplicable</name>
